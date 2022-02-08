@@ -7,7 +7,7 @@ const CardInformations = () => {
     return (
         <WrapperContainer>
             <WhiteBoxContainer>
-                <ItemDescription btnVoltar={true} containerTwoButtons={true} />
+                <ItemDescription btnVoltar={false} containerTwoButtons={true} />
             </WhiteBoxContainer>
         </WrapperContainer>
     );

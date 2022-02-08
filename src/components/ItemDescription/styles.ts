@@ -84,11 +84,16 @@ export const WrapperContainer = styled.div`
             align-items: center;
 
             button {
-                width: 40px;
                 border: none;
+                width: 40px;
                 height: 40px;
                 border-radius: 4px;
                 background: #ff9b36;
+
+                img {
+                    width: 40%;
+                    height: auto;
+                }
             }
 
             #voltarLinkSecond {
@@ -107,15 +112,8 @@ export const WrapperContainer = styled.div`
                 justify-content: center;
                 text-transform: uppercase;
 
-                /* &:hover {
-                    transition: 0.3s;
-                    background: none;
-                    color: #a3da8d;
-                    border: solid 2px #a3da8d;
-                } */
-
                 img {
-                    width: 60%;
+                    width: 40%;
                     height: auto;
                 }
             }
@@ -123,6 +121,6 @@ export const WrapperContainer = styled.div`
     }
 
     .dinamycWidth {
-        width: 36vw;
+        width: 33vw;
     }
 `;
