@@ -1,4 +1,9 @@
-import { WrapperContainer, HeaderContainer, ImageHeader } from "./styles";
+import {
+    WrapperContainer,
+    HeaderContainer,
+    ImageHeader,
+    BodyContainer,
+} from "./styles";
 import logoSoftPlan from "../../assets/images/reactMarvelSoftplan.png";
 
 const WhiteBoxContainer = () => {
@@ -7,6 +12,7 @@ const WhiteBoxContainer = () => {
             <HeaderContainer>
                 <ImageHeader src={logoSoftPlan} />
             </HeaderContainer>
+            <BodyContainer></BodyContainer>
         </WrapperContainer>
     );
 };
