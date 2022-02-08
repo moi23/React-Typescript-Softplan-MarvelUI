@@ -1,13 +1,16 @@
-import React from "react";
+import ItemDescription from "../../components/ItemDescription";
+import WhiteBoxContainer from "../../components/WhiteBoxContainer";
 
 import { WrapperContainer } from "./styles";
 
-const cardInformations = () => {
+const CardInformations = () => {
     return (
         <WrapperContainer>
-            <h1>Hello Jude</h1>
+            <WhiteBoxContainer>
+                <ItemDescription btnVoltar={true} containerTwoButtons={true} />
+            </WhiteBoxContainer>
         </WrapperContainer>
     );
 };
 
-export default cardInformations;
+export default CardInformations;

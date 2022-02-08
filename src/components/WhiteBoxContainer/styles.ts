@@ -5,11 +5,9 @@ const attributes = "solid 8px #fff";
 export const WrapperContainer = styled.div`
     width: 60vw;
     height: 80vh;
-    margin-top: 4%;
-
     display: flex;
+    margin-top: 4%;
     align-items: center;
-    /* flex-wrap: wrap; */
     flex-direction: column;
 `;
 
@@ -42,15 +40,8 @@ export const ImageHeader = styled.img`
 `;
 
 export const BodyContainer = styled.div`
-    /* padding: 10px; */
     padding: 2.3%;
+    max-width: 940px;
     background: #fff;
     border-radius: 8px;
-    max-width: 940px;
-    width: 60vw;
-
-    /* @media only screen and(min-width: 900px) {
-        background: blue;
-        padding: 200px;
-    } */
 `;
