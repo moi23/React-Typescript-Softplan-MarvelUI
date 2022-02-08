@@ -4,20 +4,16 @@ import { WrapperContainer, CardsContainer } from "./styles";
 
 import WhiteBoxContainer from "../../components/WhiteBoxContainer";
 import InputSearchButton from "../../components/InputSearchButton";
-import Card from "../../components/Card";
+
+import CardsWithCardContainer from "../../components/CardsWithCardContainer";
 
 const Home = () => {
     return (
         <WrapperContainer>
             <WhiteBoxContainer>
                 <InputSearchButton />
-                <CardsContainer>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                </CardsContainer>
+
+                <CardsWithCardContainer />
             </WhiteBoxContainer>
         </WrapperContainer>
     );
