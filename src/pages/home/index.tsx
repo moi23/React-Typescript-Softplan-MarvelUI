@@ -16,7 +16,7 @@ const Home = () => {
                     <Card />
                     <Card />
                     <Card />
-                    {/* <Card /> */}
+                    <Card />
                 </CardsContainer>
             </WhiteBoxContainer>
         </WrapperContainer>
