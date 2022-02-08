@@ -23,3 +23,15 @@ export const WrapperContainer = styled.div`
         }
     }
 `;
+
+export const CardsContainer = styled.div`
+    display: flex;
+    overflow: auto;
+    overflow-x: hidden;
+    height: 300px;
+    /* width:100cw */
+    justify-content: start;
+    flex-wrap: wrap;
+    padding-left: 2.9%;
+    margin-top: 2%;
+`;

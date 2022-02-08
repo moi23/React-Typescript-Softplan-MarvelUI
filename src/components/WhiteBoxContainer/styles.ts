@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const attributes = "solid 8px #fff";
 
@@ -6,6 +6,11 @@ export const WrapperContainer = styled.div`
     width: 60vw;
     height: 80vh;
     margin-top: 4%;
+
+    display: flex;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
 `;
 
 export const HeaderContainer = styled.div`
@@ -37,7 +42,15 @@ export const ImageHeader = styled.img`
 `;
 
 export const BodyContainer = styled.div`
-    padding: 20px;
+    /* padding: 10px; */
+    padding: 2.3%;
     background: #fff;
     border-radius: 8px;
+    max-width: 940px;
+    width: 60vw;
+
+    /* @media only screen and(min-width: 900px) {
+        background: blue;
+        padding: 200px;
+    } */
 `;

@@ -6,13 +6,17 @@ import {
 } from "./styles";
 import logoSoftPlan from "../../assets/images/reactMarvelSoftplan.png";
 
-const WhiteBoxContainer = () => {
+interface IpropsWhiteBoxContainer {
+    children: Element;
+}
+
+const WhiteBoxContainer = (props: any) => {
     return (
         <WrapperContainer>
             <HeaderContainer>
                 <ImageHeader src={logoSoftPlan} />
             </HeaderContainer>
-            <BodyContainer></BodyContainer>
+            <BodyContainer>{props.children}</BodyContainer>
         </WrapperContainer>
     );
 };
