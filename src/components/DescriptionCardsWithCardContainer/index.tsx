@@ -54,7 +54,6 @@ const DescriptionCardsWithCardContainer = () => {
                             })
                         }
                     >
-                        <h2>item: {item.id}</h2>
                         <DescriptionCard
                             image={item.thumbnail.path}
                             title={item.title}
