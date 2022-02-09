@@ -111,7 +111,7 @@ export const Wrapper = styled.div`
             width: 100%;
             text-align: center;
             padding: 0 4%;
-            h2 {
+            h5 {
                 color: white;
                 margin-top: 15px;
                 font-weight: 900;

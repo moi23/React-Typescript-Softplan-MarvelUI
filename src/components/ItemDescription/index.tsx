@@ -5,26 +5,59 @@ import abomination from "../../assets/images/abomination.jpg";
 import editImage from "../../assets/images/edit.png";
 import arrowCircleImage from "../../assets/images/arrowCircle.png";
 
+import api from "../../api/index";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 interface IpropsItemDescription {
     btnVoltar: boolean;
     containerTwoButtons: boolean;
 }
+
+interface IpropsCardInfo {
+    id: number;
+    name: string;
+    description: string;
+    thumbnail: {
+        path: string;
+        extension: string;
+    };
+}
+
 const ItemDescription = ({
     btnVoltar,
     containerTwoButtons,
 }: IpropsItemDescription) => {
+    const [cardInfo, setCardInfo] = useState({} as IpropsCardInfo);
+
+    const payload = useSelector(function (state: any) {
+        return state.personalCardInformations;
+    });
+
+    const { id } = payload;
+
+    useEffect(() => {
+        api.get(`/characters/${id}`)
+            .then((response: any) => {
+                console.log("responsee: ", response);
+                setCardInfo(response.data.data.results[0]);
+            })
+            .catch((error) => {
+                console.log("error", error);
+            });
+    }, []);
+
     return (
         <WrapperContainer>
             <div className="left">
-                <img src={abomination} alt="Image Card" />
+                <img
+                    src={`${cardInfo?.thumbnail?.path}.jpg`}
+                    alt="Image Card"
+                />
             </div>
             <div className={`right ${containerTwoButtons && "dinamycWidth"}`}>
-                <h2>Abomination (Emil Blonsky)</h2>
-                <p>
-                    The Abomination é um personagem fictício que aparece nos
-                    quadrinhos americanos publicados pela Marvel Comics. A
-                    iteração original e mais conhecida é Emil Blonsky,
-                </p>
+                <h2>{cardInfo.name}</h2>
+                <p>{cardInfo.description}</p>
 
                 {btnVoltar && (
                     <Link id="voltarLink" to="/">

@@ -2,19 +2,23 @@ import { WrapperContainer, Wrapper } from "./styles";
 import { Link } from "react-router-dom";
 import defaultImage from "../../../assets/images/defaultImage.jpg";
 
-interface ICardProps {
+interface IDescriptionCardProps {
     title: string;
     link: string;
     image: string;
 }
 
-const Card = ({ title, link = "/", image = defaultImage }: ICardProps) => {
+const DescriptionCard = ({
+    title,
+    link = "/",
+    image = defaultImage,
+}: IDescriptionCardProps) => {
     return (
         <Wrapper>
             <Link to={link}>
                 <img src={`${image}.jpg`} alt="" />
                 <div id="alignTitle">
-                    <h2>{title}</h2>
+                    <h5>{title}</h5>
                 </div>
                 <span>Veja Mais</span>
             </Link>
@@ -22,4 +26,4 @@ const Card = ({ title, link = "/", image = defaultImage }: ICardProps) => {
     );
 };
 
-export default Card;
+export default DescriptionCard;
