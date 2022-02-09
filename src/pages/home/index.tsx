@@ -1,11 +1,14 @@
-import React from "react";
+import { useState, useEffect } from "react";
 
-import { WrapperContainer, CardsContainer } from "./styles";
+import { WrapperContainer } from "./styles";
 
 import WhiteBoxContainer from "../../components/WhiteBoxContainer";
 import InputSearchButton from "../../components/InputSearchButton";
-
 import CardsWithCardContainer from "../../components/CardsWithCardContainer";
+
+import api from "../../api/index";
+
+// import marvelApi from "../../api/marvelApi";
 
 const Home = () => {
     return (
