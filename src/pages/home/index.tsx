@@ -12,7 +12,6 @@ const Home = () => {
         <WrapperContainer>
             <WhiteBoxContainer>
                 <InputSearchButton />
-
                 <CardsWithCardContainer />
             </WhiteBoxContainer>
         </WrapperContainer>

@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const WrapperContainer = styled.div`
     display: flex;
+    justify-content: center;
 
     .left {
         padding: 8px 8px;
-
         display: flex;
         border-radius: 8px;
         align-items: center;

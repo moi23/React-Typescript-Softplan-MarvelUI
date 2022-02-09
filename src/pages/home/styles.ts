@@ -5,6 +5,7 @@ export const WrapperContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-top: 4%;
     /* width: 100vw; */
 
     background: linear-gradient(67deg, #0f8bf7, #8e0c8e, #ff0202);

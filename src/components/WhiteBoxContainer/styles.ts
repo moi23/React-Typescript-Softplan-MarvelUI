@@ -6,7 +6,7 @@ export const WrapperContainer = styled.div`
     width: 60vw;
     height: 80vh;
     display: flex;
-    margin-top: 4%;
+    /* margin-top: 4%; */
     align-items: center;
     flex-direction: column;
 `;
