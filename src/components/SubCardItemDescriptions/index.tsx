@@ -18,20 +18,33 @@ const SubCardItemDescriptions = ({
     btnVoltar,
     containerTwoButtons,
 }: IpropsSubCardItemDescriptionsn) => {
+    const [contentInfo, setContentInfo] = useState({} as any);
     const results = useSelector(function (state: any) {
         return state.SubCardInformations;
     });
 
     console.log("PAY PAY", results);
 
+    useEffect(() => {
+        api.get(`series/${results.id}`)
+            .then((response) => {
+                console.log("AGORA VAI", response.data.data.results[0]);
+                setContentInfo(response.data.data.results[0]);
+            })
+            .catch((error) => console.log(error));
+    }, []);
+
     return (
         <WrapperContainer>
             <div className="left">
-                <img src={abomination} alt="Image Card" />
+                <img
+                    src={`${contentInfo.thumbnail?.path}.jpg`}
+                    alt="Image Card"
+                />
             </div>
             <div className={`right ${containerTwoButtons && "dinamycWidth"}`}>
-                <h2>{"abomination"}</h2>
-                <p>{"abomination description"}</p>
+                <h2>{contentInfo.title}</h2>
+                <p>{contentInfo.description}</p>
 
                 {btnVoltar && (
                     <Link id="voltarLink" to="/">
