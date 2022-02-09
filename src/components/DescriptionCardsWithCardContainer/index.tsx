@@ -33,13 +33,12 @@ const DescriptionCardsWithCardContainer = () => {
         });
     }, []);
 
-    const setGlobalValueCardSelected = (element: any) => {
+    const setGlobalValueChildrenCard = (element: any) => {
+        console.log("ELEMENT ID", element.id);
         dispatch({
-            type: "CARD_INFO",
+            type: "SUB_CARD_INFO",
             payload: {
                 id: element.id,
-                name: element.name,
-                description: element.description,
             },
         });
     };
@@ -50,13 +49,12 @@ const DescriptionCardsWithCardContainer = () => {
                 return (
                     <ButtonWrapper
                         onClick={() =>
-                            setGlobalValueCardSelected({
+                            setGlobalValueChildrenCard({
                                 id: item.id,
-                                name: item.name,
-                                description: item.description,
                             })
                         }
                     >
+                        <h2>item: {item.id}</h2>
                         <DescriptionCard
                             image={item.thumbnail.path}
                             title={item.title}
