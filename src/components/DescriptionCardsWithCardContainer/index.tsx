@@ -39,7 +39,6 @@ const DescriptionCardsWithCardContainer = () => {
     }, []);
 
     const setGlobalValueChildrenCard = (element: any) => {
-        console.log("ELEMENT ID", element.id);
         dispatch({
             type: "SUB_CARD_INFO",
             payload: {

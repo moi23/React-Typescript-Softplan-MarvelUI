@@ -19,7 +19,6 @@ const InputSearchButton = () => {
 
     const handleInputHero = () => {
         const inputValue = inputHeroSearch.current as any;
-        console.log(inputValue.value, typeof inputValue.value);
         return inputValue.value;
     };
 
