@@ -5,7 +5,7 @@ export const WrapperContainer = styled.div`
     overflow: auto;
     overflow-x: hidden;
     height: 300px;
-    justify-content: start;
+    justify-content: center;
     flex-wrap: wrap;
     padding-left: 2.9%;
     margin-top: 2%;

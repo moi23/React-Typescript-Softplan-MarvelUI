@@ -76,9 +76,9 @@ const ItemDescription = ({
 
                 {containerTwoButtons && (
                     <div className="controlButtons">
-                        <button>
+                        <Link id="editarLinkFirst" to="/edit-informations">
                             <img src={editImage} alt="Botão de Editar" />
-                        </button>
+                        </Link>
                         <Link id="voltarLinkSecond" to="/">
                             <img src={arrowCircleImage} alt="Botão de Voltar" />
                         </Link>

@@ -83,12 +83,15 @@ export const WrapperContainer = styled.div`
             position: absolute;
             align-items: center;
 
-            button {
+            #editarLinkFirst {
                 border: none;
                 width: 40px;
                 height: 40px;
                 border-radius: 4px;
                 background: #ff9b36;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 img {
                     width: 40%;
@@ -121,6 +124,6 @@ export const WrapperContainer = styled.div`
     }
 
     .dinamycWidth {
-        width: 33vw;
+        width: 25vw;
     }
 `;
