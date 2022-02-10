@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import api from "../../api";
+
 import DescriptionCard from "./DescriptionCard";
+import CardSkeletonCollection from "../Skelletons/CardSkeletonCollection";
 
 import { ButtonWrapper, WrapperContainer } from "./styles";
 
 import { useDispatch, useSelector } from "react-redux";
+
 import { test } from "../../store/Card/Card.actions";
 
 const DescriptionCardsWithCardContainer = () => {
+    const [requestStatus, setRequestStatus] = useState(true);
     const [payloadList, setPayloadList] = useState([]);
     const dispatch = useDispatch();
 
@@ -22,6 +26,7 @@ const DescriptionCardsWithCardContainer = () => {
         api.get(`/characters/${results.id}/series`)
             .then((response) => {
                 setPayloadList(response.data.data.results);
+                setRequestStatus(false);
             })
             .catch((error) => console.log(error));
     }, []);
@@ -45,6 +50,7 @@ const DescriptionCardsWithCardContainer = () => {
 
     return (
         <WrapperContainer>
+            {requestStatus && <CardSkeletonCollection />}
             {payloadList.map((item: any, indice: any) => {
                 return (
                     <ButtonWrapper

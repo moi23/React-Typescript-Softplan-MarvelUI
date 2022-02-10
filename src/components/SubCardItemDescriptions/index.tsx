@@ -5,6 +5,10 @@ import abomination from "../../assets/images/abomination.jpg";
 import editImage from "../../assets/images/edit.png";
 import arrowCircleImage from "../../assets/images/arrowCircle.png";
 
+import ImageProfileCardSkelleton from "../Skelletons/ImageProfileCardSkelleton";
+import TitleCardSkelleton from "../Skelletons/TitleCardSkelleton";
+import DescriptionCardSkelleton from "../Skelletons/DescriptionCardSkelleton";
+
 import api from "../../api/index";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,18 +22,17 @@ const SubCardItemDescriptions = ({
     btnVoltar,
     containerTwoButtons,
 }: IpropsSubCardItemDescriptionsn) => {
+    const [requestStatus, setRequestStatus] = useState(true);
     const [contentInfo, setContentInfo] = useState({} as any);
     const results = useSelector(function (state: any) {
         return state.SubCardInformations;
     });
 
-    console.log("PAY PAY", results);
-
     useEffect(() => {
         api.get(`series/${results.id}`)
             .then((response) => {
-                console.log("AGORA VAI", response.data.data.results[0]);
                 setContentInfo(response.data.data.results[0]);
+                setRequestStatus(false);
             })
             .catch((error) => console.log(error));
     }, []);
@@ -37,19 +40,29 @@ const SubCardItemDescriptions = ({
     return (
         <WrapperContainer>
             <div className="left">
-                <img
-                    src={`${contentInfo.thumbnail?.path}.jpg`}
-                    alt="Image Card"
-                />
+                {requestStatus && <ImageProfileCardSkelleton />}
+                {!requestStatus && (
+                    <img
+                        src={`${contentInfo.thumbnail?.path}.jpg`}
+                        alt="Image Card"
+                    />
+                )}
             </div>
             <div className={`right ${containerTwoButtons && "dinamycWidth"}`}>
-                <h2>{contentInfo.title}</h2>
-                <p>{contentInfo.description}</p>
+                {requestStatus && <TitleCardSkelleton />}
+                {!requestStatus && <h2>{contentInfo.title}</h2>}
 
-                {btnVoltar && (
-                    <Link id="voltarLink" to="/">
-                        Voltar
-                    </Link>
+                {requestStatus && <DescriptionCardSkelleton />}
+                {!requestStatus && <p>{contentInfo.description}</p>}
+
+                {!requestStatus && (
+                    <>
+                        {btnVoltar && (
+                            <Link id="voltarLink" to="/">
+                                Voltar
+                            </Link>
+                        )}
+                    </>
                 )}
 
                 {containerTwoButtons && (
