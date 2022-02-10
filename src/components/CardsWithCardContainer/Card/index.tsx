@@ -14,7 +14,7 @@ const Card = ({ title, link = "/", image = defaultImage }: ICardProps) => {
             <Link to={link}>
                 <img src={`${image}.jpg`} alt="" />
                 <div id="alignTitle">
-                    <h2>{title}</h2>
+                    <h4>{title}</h4>
                 </div>
                 <span>Veja Mais</span>
             </Link>
