@@ -1,29 +1,29 @@
-import React from "react";
-
 import { WrapperContainer } from "./styles";
-import InputTitleAndInputDescription from "../../components/InputTitleAndInputDescription";
+// import ItemDescription from "../../components/ItemDescription";
+import EditInformationsItemDescription from "../../components/EditInformationsItemDescription";
 import WhiteBoxContainer from "../../components/WhiteBoxContainer";
-import ItemDescription from "../../components/ItemDescription";
-
-import api from "../../api";
-
-import { useDispatch, useSelector } from "react-redux";
-import { CardInfo } from "../../store/PersonalCardInformations/PersonalCardInformations.actions";
+import InputTitleAndInputDescription from "../../components/InputTitleAndInputDescription";
+import StarfieldAnimation from "react-starfield-animation";
 
 const EditCard = () => {
-    const cardInfo = useSelector(function (state: any) {
-        return state.personalCardInformations;
-    });
-
     return (
         <WrapperContainer>
             <WhiteBoxContainer>
-                <ItemDescription
+                <EditInformationsItemDescription
                     btnVoltar={false}
                     containerTwoButtons={false}
                 />
                 <InputTitleAndInputDescription />
             </WhiteBoxContainer>
+            <StarfieldAnimation
+                id="teste"
+                style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "100vh",
+                    top: 0,
+                }}
+            />
         </WrapperContainer>
     );
 };

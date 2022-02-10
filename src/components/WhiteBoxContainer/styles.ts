@@ -3,6 +3,7 @@ import styled from "styled-components";
 const attributes = "solid 8px #fff";
 
 export const WrapperContainer = styled.div`
+    z-index: 1;
     width: 60vw;
     height: 80vh;
     display: flex;
@@ -46,4 +47,6 @@ export const BodyContainer = styled.div`
     background: #fff;
     border-radius: 8px;
     min-width: 520px;
+    -webkit-box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 16%);
+    box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 16%);
 `;

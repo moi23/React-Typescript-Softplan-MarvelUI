@@ -1,4 +1,4 @@
-import { WrapperContainer, Wrapper } from "./styles";
+import { Wrapper } from "./styles";
 import { Link } from "react-router-dom";
 import defaultImage from "../../../assets/images/defaultImage.jpg";
 

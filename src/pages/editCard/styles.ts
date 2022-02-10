@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const WrapperContainer = styled.div`
+    z-index: 1;
     transition: 0.3s;
     min-height: 100vh;
     display: flex;

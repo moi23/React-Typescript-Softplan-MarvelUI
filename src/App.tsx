@@ -1,20 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import GlobalStyle from "./styles/GlobalStyle";
-
+import "./styles/animate.css";
 import Home from "./pages/home";
-
+import GlobalStyle from "./styles/GlobalStyle";
+import EditCardInformations from "./pages/editCard";
 import CardInformations from "./pages/cardInformations";
 import SubCardInformations from "./pages/subCardInformations";
-import EditCardInformations from "./pages/editCard";
-import "./styles/animate.css";
-
-import axios from "axios";
-import md5 from "md5";
-import { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-    // const baseURL = "http://gateway.marvel.com/v1/public/character?";
-
     return (
         <BrowserRouter>
             <Routes>

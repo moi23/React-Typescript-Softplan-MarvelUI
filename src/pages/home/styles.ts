@@ -7,6 +7,7 @@ export const WrapperContainer = styled.div`
     justify-content: center;
     padding-top: 4%;
     /* width: 100vw; */
+    position: relative;
 
     background: linear-gradient(67deg, #0f8bf7, #8e0c8e, #ff0202);
     background-size: 180% 180%;
@@ -22,6 +23,13 @@ export const WrapperContainer = styled.div`
         100% {
             background-position: 0% 50%;
         }
+    }
+
+    #teste {
+        /* background: red; */
+        z-index: 0;
+        overflow-y: hidden;
+        top: 0;
     }
 `;
 

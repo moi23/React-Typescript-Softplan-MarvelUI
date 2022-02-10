@@ -1,7 +1,5 @@
-import React from "react";
-import ItemDescription from "../../components/ItemDescription";
-import SubCardItemDescriptions from "../../components/SubCardItemDescriptions";
 import WhiteBoxContainer from "../../components/WhiteBoxContainer";
+import SubCardItemDescriptions from "../../components/SubCardItemDescriptions";
 
 import { WrapperContainer } from "./styles";
 

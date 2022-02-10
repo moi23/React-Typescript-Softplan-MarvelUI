@@ -4,3 +4,4 @@ declare module "*.jpg";
 declare module "*.png";
 declare module "*.jpeg";
 declare module "marvel-api";
+declare module "react-starfield-animation";

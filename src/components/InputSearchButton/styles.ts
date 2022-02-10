@@ -28,7 +28,7 @@ export const WrapperContainer = styled.form`
 
         img {
             height: auto;
-            width: 60%;
+            width: 50%;
         }
 
         &:hover {

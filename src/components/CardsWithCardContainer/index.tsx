@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
-import api from "../../api";
 import Card from "./Card";
-
-import { ButtonWrapper, WrapperContainer } from "./styles";
-
-import { useDispatch, useSelector } from "react-redux";
+import api from "../../api";
+import React, { useEffect, useState } from "react";
 import { test } from "../../store/Card/Card.actions";
+import { useDispatch, useSelector } from "react-redux";
+import { ButtonWrapper, WrapperContainer } from "./styles";
 import SkeletonsCollection from "../Skelletons/CardSkeletonCollection";
 
 const CardsWithCardContainer = () => {

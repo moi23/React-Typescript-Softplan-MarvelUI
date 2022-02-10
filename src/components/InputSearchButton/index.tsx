@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 
 import { WrapperContainer } from "./styles";
 import iconSearch from "../../assets/images/IconSearch.png";
+import iconClose from "../../assets/images/X.png";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -32,6 +33,13 @@ const InputSearchButton = () => {
         });
     };
 
+    const clearInputValue = (event: any) => {
+        event.preventDefault();
+        const inputValue = inputHeroSearch.current as any;
+
+        inputValue.current.value = "";
+    };
+
     return (
         <WrapperContainer>
             <input
@@ -40,8 +48,12 @@ const InputSearchButton = () => {
                 ref={inputHeroSearch}
                 onChange={handleInputHero}
             />
+
             <button onClick={handleSearchInput}>
                 <img src={iconSearch} alt="" />
+            </button>
+            <button onClick={clearInputValue}>
+                <img src={iconClose} alt="" />
             </button>
         </WrapperContainer>
     );
