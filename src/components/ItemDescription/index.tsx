@@ -10,6 +10,8 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import ImageProfileCardSkelleton from "../Skelletons/ImageProfileCardSkelleton";
+import TitleCardSkelleton from "../Skelletons/TitleCardSkelleton";
+import DescriptionCardSkelleton from "../Skelletons/DescriptionCardSkelleton";
 
 interface IpropsItemDescription {
     btnVoltar: boolean;
@@ -31,7 +33,7 @@ const ItemDescription = ({
     containerTwoButtons,
 }: IpropsItemDescription) => {
     const [cardInfo, setCardInfo] = useState({} as IpropsCardInfo);
-    const [z, setZ] = useState(true);
+    const [requestStatus, setRequestStatus] = useState(true);
 
     const payload = useSelector(function (state: any) {
         return state.personalCardInformations;
@@ -44,7 +46,7 @@ const ItemDescription = ({
             .then((response: any) => {
                 console.log("responsee: ", response);
                 setCardInfo(response.data.data.results[0]);
-                setZ(false);
+                setRequestStatus(false);
             })
             .catch((error) => {
                 console.log("error", error);
@@ -54,13 +56,17 @@ const ItemDescription = ({
     return (
         <WrapperContainer>
             <div className="left">
-                {z && <ImageProfileCardSkelleton />}
-
-                {!z && <img src={`${cardInfo?.thumbnail?.path}.jpg`} />}
+                {requestStatus && <ImageProfileCardSkelleton />}
+                {!requestStatus && (
+                    <img src={`${cardInfo?.thumbnail?.path}.jpg`} />
+                )}
             </div>
             <div className={`right ${containerTwoButtons && "dinamycWidth"}`}>
-                <h2>{cardInfo.name}</h2>
-                <p>{cardInfo.description}</p>
+                {requestStatus && <TitleCardSkelleton />}
+                {!requestStatus && <h2>{cardInfo.name}</h2>}
+
+                {requestStatus && <DescriptionCardSkelleton />}
+                {!requestStatus && <p>{cardInfo.description}</p>}
 
                 {btnVoltar && (
                     <Link id="voltarLink" to="/">
