@@ -20,7 +20,7 @@ const CardsWithCardContainer = () => {
     const [cardSkeletonIsStatus, setCardSkeletonIsStatus] = useState(true);
 
     useEffect(() => {
-        api.get("/characters")
+        api.get("/characters?limit=100")
             .then((response) => {
                 setCardList(response.data.data.results);
                 setCardSkeletonIsStatus(false);
