@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./styles/animate.css";
+import Home from "./pages/home";
+import GlobalStyle from "./styles/GlobalStyle";
+import EditCardInformations from "./pages/editCard";
+import CardInformations from "./pages/cardInformations";
+import SubCardInformations from "./pages/subCardInformations";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
+                <Route
+                    path="/card-informations"
+                    element={<CardInformations />}
+                />
+                <Route
+                    path="/sub-card-informations"
+                    element={<SubCardInformations />}
+                />
+                <Route
+                    path="/edit-informations"
+                    element={<EditCardInformations />}
+                />
+            </Routes>
+            <GlobalStyle />
+        </BrowserRouter>
+    );
 }
 
 export default App;
