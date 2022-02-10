@@ -35,6 +35,29 @@ const CardsWithCardContainer = () => {
         });
     }, []);
 
+    const inputValueChanged = useSelector(function (state: any) {
+        return state.HomeInputText;
+    });
+
+    useEffect(() => {
+        if (inputValueChanged !== "") {
+            (async () => {
+                const payload = await api.get(
+                    `/characters?name=${inputValueChanged}`
+                );
+                console.log("PAYLOAD!!!!", payload);
+                setCardList(payload.data.data.results);
+                console.log("É 1");
+            })();
+        } else {
+            (async () => {
+                const payload = await api.get("/characters");
+                setCardList(payload.data.data.results);
+                console.log("É 0", payload);
+            })();
+        }
+    }, [inputValueChanged]);
+
     const setGlobalValueCardSelected = (element: any) => {
         dispatch({
             type: "CARD_INFO",

@@ -9,6 +9,7 @@ export const WrapperContainer = styled.div`
     /* margin-top: 4%; */
     align-items: center;
     flex-direction: column;
+    /* background: red; */
 `;
 
 export const HeaderContainer = styled.div`
@@ -44,4 +45,5 @@ export const BodyContainer = styled.div`
     max-width: 940px;
     background: #fff;
     border-radius: 8px;
+    min-width: 520px;
 `;
