@@ -106,8 +106,9 @@ Run the commands below to run the project.
     -   [ ] Spanish -->
     
     
-# Making Of
+## Making Of
 
 See also the process of creating the UI of the project in AdobeXD :)
+
  <img src="https://user-images.githubusercontent.com/35411539/153486728-51f2fad9-9fe3-49ff-8c2a-c93ba6ec696f.png" alt="Logo" width="100%" height="auto">
 
