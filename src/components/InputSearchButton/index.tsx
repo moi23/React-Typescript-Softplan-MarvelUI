@@ -37,7 +37,6 @@ const InputSearchButton = () => {
         event.preventDefault();
         const inputValue = inputHeroSearch.current as any;
 
-        console.log("x:", inputValue.value);
         inputValue.value = "";
 
         dispatch({
@@ -50,7 +49,7 @@ const InputSearchButton = () => {
         <WrapperContainer>
             <input
                 type="text"
-                placeholder="Pesquisar Herói"
+                placeholder="Search Hero."
                 ref={inputHeroSearch}
                 onChange={handleInputHero}
             />

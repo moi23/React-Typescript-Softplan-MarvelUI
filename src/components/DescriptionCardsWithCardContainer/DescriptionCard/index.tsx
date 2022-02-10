@@ -20,7 +20,7 @@ const DescriptionCard = ({
                 <div id="alignTitle">
                     <h5>{title}</h5>
                 </div>
-                <span>Veja Mais</span>
+                <span>SEE MORE.</span>
             </Link>
         </Wrapper>
     );
