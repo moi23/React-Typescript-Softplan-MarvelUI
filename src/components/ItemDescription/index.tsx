@@ -9,6 +9,8 @@ import api from "../../api/index";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import ImageProfileCardSkelleton from "../Skelletons/ImageProfileCardSkelleton";
+
 interface IpropsItemDescription {
     btnVoltar: boolean;
     containerTwoButtons: boolean;
@@ -29,6 +31,7 @@ const ItemDescription = ({
     containerTwoButtons,
 }: IpropsItemDescription) => {
     const [cardInfo, setCardInfo] = useState({} as IpropsCardInfo);
+    const [z, setZ] = useState(true);
 
     const payload = useSelector(function (state: any) {
         return state.personalCardInformations;
@@ -41,6 +44,7 @@ const ItemDescription = ({
             .then((response: any) => {
                 console.log("responsee: ", response);
                 setCardInfo(response.data.data.results[0]);
+                setZ(false);
             })
             .catch((error) => {
                 console.log("error", error);
@@ -50,10 +54,9 @@ const ItemDescription = ({
     return (
         <WrapperContainer>
             <div className="left">
-                <img
-                    src={`${cardInfo?.thumbnail?.path}.jpg`}
-                    alt="Image Card"
-                />
+                {z && <ImageProfileCardSkelleton />}
+
+                {!z && <img src={`${cardInfo?.thumbnail?.path}.jpg`} />}
             </div>
             <div className={`right ${containerTwoButtons && "dinamycWidth"}`}>
                 <h2>{cardInfo.name}</h2>

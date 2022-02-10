@@ -6,6 +6,7 @@ import { ButtonWrapper, WrapperContainer } from "./styles";
 
 import { useDispatch, useSelector } from "react-redux";
 import { test } from "../../store/Card/Card.actions";
+import SkeletonsCollection from "../Skelletons/CardSkeletonCollection";
 
 const CardsWithCardContainer = () => {
     const dispatch = useDispatch();
@@ -16,11 +17,13 @@ const CardsWithCardContainer = () => {
     });
 
     const [cardList, setCardList] = useState([]);
+    const [cardSkeletonIsStatus, setCardSkeletonIsStatus] = useState(true);
 
     useEffect(() => {
         api.get("/characters")
             .then((response) => {
                 setCardList(response.data.data.results);
+                setCardSkeletonIsStatus(false);
             })
             .catch((error) => console.log(error));
     }, []);
@@ -45,6 +48,12 @@ const CardsWithCardContainer = () => {
 
     return (
         <WrapperContainer>
+            {cardSkeletonIsStatus && (
+                <>
+                    <SkeletonsCollection />
+                </>
+            )}
+
             {cardList.map((item: any, indice: any) => {
                 return (
                     <ButtonWrapper

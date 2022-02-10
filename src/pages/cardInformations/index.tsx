@@ -4,8 +4,6 @@ import WhiteBoxContainer from "../../components/WhiteBoxContainer";
 
 import { WrapperContainer } from "./styles";
 
-// import { CardInfo } from "../../store/PersonalCardInformations/PersonalCardInformations.actions";
-
 const CardInformations = () => {
     return (
         <WrapperContainer>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import defaultImage from "../../../assets/images/defaultImage.jpg";
+import starsbg from "../../../assets/images/starsbg.jpg";
 
 export const WrapperContainer = styled.button`
     height: 256px;
@@ -13,8 +14,8 @@ export const WrapperContainer = styled.button`
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-
-    &:hover {
+    background-image: url(${starsbg});
+    background &:hover {
         transition: 0.3s;
         opacity: 90%;
         /* margin-top: 15px; */
