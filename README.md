@@ -106,7 +106,7 @@ Run the commands below to run the project.
     -   [ ] Spanish -->
     
     
-## Making Of
+## Making off
 
 See also the process of creating the UI of the project in AdobeXD :)
 
