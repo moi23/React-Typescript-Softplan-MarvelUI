@@ -37,7 +37,13 @@ const InputSearchButton = () => {
         event.preventDefault();
         const inputValue = inputHeroSearch.current as any;
 
-        inputValue.current.value = "";
+        console.log("x:", inputValue.value);
+        inputValue.value = "";
+
+        dispatch({
+            type: "HOME_INPUT_TEXT",
+            payload: "",
+        });
     };
 
     return (

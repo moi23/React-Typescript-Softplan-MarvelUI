@@ -5,6 +5,7 @@ import {
     BodyContainer,
 } from "./styles";
 import logoSoftPlan from "../../assets/images/reactMarvelSoftplan.png";
+
 import { Link } from "react-router-dom";
 
 interface IpropsWhiteBoxContainer {
@@ -14,12 +15,14 @@ interface IpropsWhiteBoxContainer {
 const WhiteBoxContainer = (props: any) => {
     return (
         <WrapperContainer>
-            <HeaderContainer>
+            <HeaderContainer className="animate__animated animate__fadeIn animate__delay-1s">
                 <Link to="/">
                     <ImageHeader src={logoSoftPlan} />
                 </Link>
             </HeaderContainer>
-            <BodyContainer>{props.children}</BodyContainer>
+            <BodyContainer className="animate__animated animate__fadeIn">
+                {props.children}
+            </BodyContainer>
         </WrapperContainer>
     );
 };
