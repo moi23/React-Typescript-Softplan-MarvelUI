@@ -1,18 +1,12 @@
 import Card from "./Card";
 import api from "../../api";
-import React, { useEffect, useState } from "react";
-import { test } from "../../store/Card/Card.actions";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ButtonWrapper, WrapperContainer } from "./styles";
 import SkeletonsCollection from "../Skelletons/CardSkeletonCollection";
 
 const CardsWithCardContainer = () => {
     const dispatch = useDispatch();
-
-    // busca valor inicial
-    const results = useSelector(function (state: any) {
-        return state.card;
-    });
 
     const [cardList, setCardList] = useState([]);
     const [cardSkeletonIsStatus, setCardSkeletonIsStatus] = useState(true);
@@ -43,15 +37,12 @@ const CardsWithCardContainer = () => {
                 const payload = await api.get(
                     `/characters?name=${inputValueChanged}`
                 );
-                console.log("PAYLOAD!!!!", payload);
                 setCardList(payload.data.data.results);
-                console.log("É 1");
             })();
         } else {
             (async () => {
                 const payload = await api.get("/characters");
                 setCardList(payload.data.data.results);
-                console.log("É 0", payload);
             })();
         }
     }, [inputValueChanged]);

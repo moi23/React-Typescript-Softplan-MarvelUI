@@ -20,7 +20,6 @@ function App() {
     const timestmp = Number(new Date());
     const hash = md5(timestmp + privateKey + publicKey);
 
-    console.log("timestmp", timestmp);
 
     // axios.get();
 

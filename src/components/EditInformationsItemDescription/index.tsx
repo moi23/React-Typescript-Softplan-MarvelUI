@@ -47,7 +47,6 @@ const EditInformationsItemDescription = ({
     useEffect(() => {
         api.get(`/characters/${id}`)
             .then((response: any) => {
-                console.log("responsee: ", response);
                 setCardInfo(response.data.data.results[0]);
                 setRequestStatus(false);
             })
