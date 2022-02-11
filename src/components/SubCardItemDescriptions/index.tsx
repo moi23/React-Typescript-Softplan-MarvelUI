@@ -1,5 +1,5 @@
 import { WrapperContainer } from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import abomination from "../../assets/images/abomination.jpg";
 import editImage from "../../assets/images/edit.png";
@@ -28,13 +28,18 @@ const SubCardItemDescriptions = ({
         return state.SubCardInformations;
     });
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         api.get(`series/${results.id}`)
             .then((response) => {
                 setContentInfo(response.data.data.results[0]);
                 setRequestStatus(false);
             })
-            .catch((error) => console.log(error));
+            .catch((error) => {
+                console.log(error);
+                navigate("/");
+            });
     }, []);
 
     return (

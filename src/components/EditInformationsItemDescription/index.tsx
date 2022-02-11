@@ -1,5 +1,5 @@
 import { WrapperContainer } from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import editImage from "../../assets/images/edit.png";
 import arrowCircleImage from "../../assets/images/arrowCircle.png";
@@ -40,7 +40,9 @@ const EditInformationsItemDescription = ({
 
     const { id } = payload;
 
-    let fakeCardInformations = useSelector(function (state: any) {
+    const navigate = useNavigate();
+
+    const fakeCardInformations = useSelector(function (state: any) {
         return state.testeAA;
     });
 
@@ -52,6 +54,7 @@ const EditInformationsItemDescription = ({
             })
             .catch((error) => {
                 console.log("error", error);
+                navigate("/");
             });
     }, []);
 
