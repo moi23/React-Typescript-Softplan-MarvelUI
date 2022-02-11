@@ -63,6 +63,8 @@ This is a basic project that started with the facebook boilerplate Create-React-
 
 For state management we use React Redux.
 
+The project was developed in just 2 days, I tried to do it keeping a standard but something or another went out of scope, now the next steps are to correct these low-effort implementations that were left behind. :)
+
 I apologize if there is anything out of the ordinary, I will still be working on the project, there are some things that I want to improve but from the beginning it is a project that was developed with great care. <3
 
 ### Prerequisites
