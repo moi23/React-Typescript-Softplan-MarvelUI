@@ -1,5 +1,5 @@
 import { WrapperContainer } from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import editImage from "../../assets/images/edit.png";
 import arrowCircleImage from "../../assets/images/arrowCircle.png";
@@ -39,15 +39,18 @@ const ItemDescription = ({
     });
 
     const { id } = payload;
+    const navigate = useNavigate();
 
     useEffect(() => {
         api.get(`/characters/${id}`)
             .then((response: any) => {
+                console.log("responsee: ", response);
                 setCardInfo(response.data.data.results[0]);
                 setRequestStatus(false);
             })
             .catch((error) => {
                 console.log("error", error);
+                navigate("/");
             });
     }, []);
 
